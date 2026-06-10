@@ -18,12 +18,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                docker rm -f portfolio-container || true
-
-                docker run -d \
-                  --name portfolio-container \
-                  -p 80:80 \
-                  portfolio-app
+                docker rm -f futuristic-site || true
+                docker run -d --name futuristic-site -p 80:80 portfolio-app
                 '''
             }
         }
