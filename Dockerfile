@@ -1,6 +1,4 @@
-FROM ubuntu
-
-RUN sudo apt-update && apt install jenkins
+FROM nginx:alpine
 
 COPY src/ /usr/share/nginx/html/
 
